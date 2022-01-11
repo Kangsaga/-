@@ -15,8 +15,8 @@ public class MemberDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			String db_url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String db_id = "campus_f_4_1209";
-			String db_pw = "smhrd4";
+			String db_id = "";
+			String db_pw = "";
 
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 
@@ -98,7 +98,7 @@ public class MemberDAO {
 		int cnt = 0;
 		try {
 			getConnection();
-			// 3. SQL¹® ÀÛ¼º ¹× ½ÇÇà
+			// 3. SQLÂ¹Â® Ã€Ã›Â¼Âº Â¹Ã— Â½Ã‡Ã‡Ã 
 			String sql = "DELETE FROM member WHERE ID = ? AND PW = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
